@@ -1,0 +1,89 @@
+.v-tab__slider{
+  display: none !important;
+}
+.v-slide-group{
+  width: fit-content;
+  border-radius: 8px;
+}
+.v-slide-group__content{
+  background-color: #1F2937 !important;
+  display: flex;
+  padding: 0 5px;
+  align-items: center;
+}
+.v-slide-group__content .v-btn{
+  height: 32px !important;
+  border-radius: 8px !important;
+  padding: 0 8px;
+  margin: 0 2px;
+  color: #9CA3AF;
+}
+.v-slide-group__content .v-tab-item--selected{
+  background-color: #111827 !important;
+  color: #ffffff;
+}
+
+.v-btn{
+  text-transform: none!important;
+}
+.img_block{
+    border: 1px solid orange;
+    border-radius: 16px;
+}
+.v-card{
+    background-color: transparent !important;
+    color: white !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(25px)!important;
+}
+.scrollable::-webkit-scrollbar-track {
+  background: rgba(244, 155, 21, 0.17);
+  border-radius: 0 26px 26px 0 ;
+  margin: 10px 0;
+}
+.scrollable::-webkit-scrollbar {
+  width: 3px; /* Scrollning kengligi */
+}
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #e4eaf6; /* Scroll rangi */
+  border-radius: 0 36px 36px 0;    /* Burchaklarda radius */
+}
+
+/* Hover holatidagi scroll */
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background-color: #a3b1cc; /* Hover holatda scroll rangi */
+}
+.scrollable{
+  max-height: 200px !important;
+  overflow-y: auto !important;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.animated-card-right {
+  animation: slideInFromRight 1s ease-in-out;
+}
+.animated-card {
+  animation: slideInFromLeft 1s ease-in-out;
+}
