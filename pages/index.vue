@@ -183,7 +183,7 @@ function onClickLang(message, type) {
   const mainData =ref(
       {
         id: null,
-        name: 'Main name',
+        name: 'test checking name',
         text: 'main text'
       }
   );
