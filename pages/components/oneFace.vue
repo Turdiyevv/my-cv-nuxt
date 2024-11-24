@@ -1,7 +1,7 @@
 <template>
   <v-row class="ma-0 pa-0">
     <v-col class="pa-7" cols="12" sm="8">
-      <h2>Welcome to Turdiyev's site</h2>
+      <h2>{{ $t('welcome') }} to Turdiyev's site</h2>
       <h3>Frontend Developer</h3>
       <div class="ability my-7">
         <h4># Communication skills</h4>
@@ -11,7 +11,7 @@
         <h4># Quick learning</h4>
       </div>
       <v-btn
-          variant="flat" @click="showNotification('Movement does not exist!', 'warning')"
+          variant="flat" @click="openPortfolio"
       >More...</v-btn>
     </v-col>
     <v-col class="pa-7" cols="12" sm="4">
@@ -29,12 +29,17 @@
 <script setup>
   import {ref} from "vue";
   import Notification from "/pages/components/notification.vue";
+  import {useRouter} from "#app";
+  const router = useRouter();
   const notificationRef = ref(null);
   const showNotification = (message, type) => {
     if (notificationRef.value) {
       notificationRef.value.showNotification(message, type);
     }
   };
+  const openPortfolio = () => {
+    router.push("/dashboard");
+  }
 </script>
 <style scoped>
 .photo-class{

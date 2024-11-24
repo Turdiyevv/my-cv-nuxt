@@ -9,16 +9,16 @@
           <v-icon color="white">mdi-menu</v-icon>
         </template>
         <v-app-bar-title class="d-flex justify-center">
-          <div style="color: white">Turdiyev site</div>
+          <div style="color: white">Turdiyev {{ $t('site') }}</div>
         </v-app-bar-title>
         <template v-slot:append>
           <v-btn  color="white"
             :prepend-icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
             @click="onClick('Movement does not exist!','warning')"
           ></v-btn>
-          <v-btn @click="onClickLang('Movement does not exist!','warning')" color="white" size="small">Uz</v-btn>
-          <v-btn @click="onClickLang('Movement does not exist!','warning')" class="mx-1" color="white" size="small">Ру</v-btn>
-          <v-btn color="white" size="small">En</v-btn>
+          <v-btn @click="changeLanguage('uz')" color="white" size="small">Uz</v-btn>
+          <v-btn @click="changeLanguage('ru')" class="mx-1" color="white" size="small">Ру</v-btn>
+          <v-btn @click="changeLanguage('en')" color="white" size="small">En</v-btn>
         </template>
       </v-app-bar>
       <v-main class="ma-0">
@@ -147,7 +147,12 @@
 </template>
 
 <script setup>
+import {useI18n} from 'vue-i18n';
+const { locale, t } = useI18n();
 
+function changeLanguage(lang) {
+  locale.value = lang;
+}
 useHead({
   title: 'Turdiyev blog',
   titleTemplate: (titleChunk) => {
@@ -174,12 +179,9 @@ function onClick(message, type) {
     }
   theme.value = theme.value === 'light' ? 'dark' : 'light'
 }
-function onClickLang(message, type) {
-    if (notificationRef.value) {
-      notificationRef.value.showNotification(message, type);
-    }
-}
 
+// Kalitni tekshirish
+console.log(locale.value);
   const mainData =ref(
       {
         id: null,
