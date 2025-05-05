@@ -31,7 +31,7 @@
         <div style="background-color: #05070CFF">
           <three-face/>
         </div>
-        <div>
+        <div style="background-color: #05070CFF">
           <footer-page/>
         </div>
       </v-main>

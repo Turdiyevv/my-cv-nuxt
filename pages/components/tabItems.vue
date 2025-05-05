@@ -59,7 +59,8 @@
               <h1>""</h1>
               <h3>Kompaniya: Plum technologies</h3>
               <h5 class="mt-2">
-                <a href="https://plumtech.uz"></a>https://plumtech.uz</h5>
+                <a href="https://plumtech.uz">https://plumtech.uz</a>
+              </h5>
             </div>
           </v-col>
           <v-col cols="12" md="8">
@@ -86,7 +87,6 @@
 import {ref} from "vue";
 
 const tab = ref(null);
-const text1 = ref('Dividing big ideas into teams-driven pieces with user stories')
 const text2 = ref('#HTML #css #javaScript #typeScript #tailwindCss #vuetify #vueJs2 #vueJs3 #reactJs #nextJs #nuxtJs #elementPlus #bootstrap #restApi #pinia #vuex #axios #figma')
 
 const gettext2F = () => {
